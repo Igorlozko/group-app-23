@@ -21,7 +21,7 @@ const NewNearByPlace = (latitude, longitude) => {
     });
 };
 
-export default { NewNearByPlace };
+export default { NewNearByPlace, API_KEY };
 
 
 
