@@ -51,7 +51,11 @@ export default function HomeScreen() {
       <View>
         <View style={styles.headerContainer}>
           <Header />
-          <SearchBar searchedLocation={(location) => console.log(location)} />
+          <SearchBar searchedLocation={(location) => 
+        setLocation({
+            latitude:location.lat,
+            longitude:location.lng
+        })} />
         </View>
         <AppMapView placeList={placeList} />
         <View style={styles.placelistcontainer}>
