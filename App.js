@@ -53,22 +53,19 @@ export default function App() {
 
 
   return (
-    <ClerkProvider 
-    tokenCache={tokenCache}
-    publishableKey={'pk_test_cmVndWxhci1zdGFnLTI4LmNsZXJrLmFjY291bnRzLmRldiQ'}>
-      <UserLocationContext.Provider 
-      value={{location,setLocation}}>
-      <View style={styles.container}>
-      <SignedIn>
-          <NavigationContainer>
-            <TabNavigation/>
-          </NavigationContainer>
-        </SignedIn>
-        <SignedOut>
-          <LoginScreen/>
-        </SignedOut>
-        <StatusBar style="auto" />
-      </View>
+    <ClerkProvider tokenCache={tokenCache} publishableKey={'pk_test_cmVndWxhci1zdGFnLTI4LmNsZXJrLmFjY291bnRzLmRldiQ'}>
+      <UserLocationContext.Provider value={{location,setLocation}}>
+        <View style={styles.container}>
+          <SignedIn>
+            <NavigationContainer>
+              <TabNavigation/>
+            </NavigationContainer>
+          </SignedIn>
+          <SignedOut>
+            <LoginScreen/>
+          </SignedOut>
+          <StatusBar style="auto" />
+        </View>
       </UserLocationContext.Provider>
     </ClerkProvider>
   );

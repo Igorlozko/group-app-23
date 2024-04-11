@@ -1,10 +1,15 @@
-import { View, Text, Image, Dimensions, StyleSheet } from 'react-native';
+import { View, Text, Image, Dimensions, StyleSheet, TextInput,KeyboardAvoidingView, Platform } from 'react-native';
 import React from 'react';
 import GlobalApi from '../../Utils/GlobalApi';
 import { FontAwesome } from '@expo/vector-icons';
+import { Button } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function PlaceItem({ place }) {
+    const navigation = useNavigation();
     const PLACE_PHOTO_BASE_URL = "https://maps.googleapis.com/maps/api/place/photo";
+    
     return (
         <View
             style={{
@@ -36,6 +41,12 @@ export default function PlaceItem({ place }) {
                     <Text style={[styles.directionsText, { color: 'white' }]}>Get directions to your resturaunt :</Text>
                     <FontAwesome name="location-arrow" size={25} color="white" />
                 </View>
+                <View>
+                <Button
+   title="Reviews"
+   onPress={() => navigation.navigate('ReviewNavigator', { screen: 'Review' })}
+/>
+</View>
             </View>
         </View>
     );
