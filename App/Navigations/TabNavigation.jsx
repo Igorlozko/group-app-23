@@ -16,7 +16,7 @@ const ReviewNavigator =createNativeStackNavigator();
 export function ReviewStack() {
   return (
     <ReviewNavigator.Navigator>
-      <ReviewNavigator.Screen name='HomeScreen' component={HomeScreen} />
+      <ReviewNavigator.Screen name='HomeScreen' component={HomeScreen}options={{ headerShown: false }}/>
       <ReviewNavigator.Screen name='Review' component={Review} />
     </ReviewNavigator.Navigator>
   )
