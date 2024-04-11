@@ -59,12 +59,15 @@ export default function PlaceItem({ place }) {
           <FontAwesome name="location-arrow" size={25} color="white" />
         </View>
         <View>
-          <Button
-            title="Reviews"
-            onPress={() =>
-              navigation.navigate("ReviewStack", { screen: "Review" })
-            }
-          />
+        <Button
+  title="Reviews"
+  onPress={() =>
+    navigation.navigate('ReviewStack', { 
+      screen: 'Review',
+      params: { imageUrl: place.photos && place.photos.length > 0 ? `${PLACE_PHOTO_BASE_URL}?maxheight=800&maxwidth=1200&photoreference=${place.photos[0].photo_reference}&key=${GlobalApi.API_KEY}` : null }
+    })
+  }
+/>
         </View>
       </View>
     </View>
