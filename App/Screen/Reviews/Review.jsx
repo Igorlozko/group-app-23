@@ -6,14 +6,17 @@ function Review({route}) {
   const [review, setReview] = useState('');
 
   const submitReview = async () => {
-    const response = await fetch('https://your-backend-url/reviews', {
+    const response = await fetch('https://c0d3-79-140-211-73.ngrok-free.app/review', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ review }),
+      body: JSON.stringify({ name: 'User', description: review }),
     });
-
+  
+    const data = await response.json();
+    console.log(data);
+  
     if (!response.ok) {
       // Handle error
       console.error('Failed to submit review');
