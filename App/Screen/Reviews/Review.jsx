@@ -70,7 +70,7 @@ function Review({route}) {
   <Text>Add a Note</Text>
 </TouchableOpacity>
       <FlatList
-        data={reviews}
+       data={reviews.slice().reverse()}
         keyExtractor={(item, index) => index.toString()}
         renderItem={({ item }) => (
           <Card>
