@@ -64,7 +64,9 @@ export default function PlaceItem({ place }) {
   onPress={() =>
     navigation.navigate('ReviewStack', { 
       screen: 'Review',
-      params: { imageUrl: place.photos && place.photos.length > 0 ? `${PLACE_PHOTO_BASE_URL}?maxheight=800&maxwidth=1200&photoreference=${place.photos[0].photo_reference}&key=${GlobalApi.API_KEY}` : null }
+      params: { imageUrl: place.photos && place.photos.length > 0 ? `${PLACE_PHOTO_BASE_URL}?maxheight=800&maxwidth=1200&photoreference=${place.photos[0].photo_reference}&key=${GlobalApi.API_KEY}` : null,
+      placeId: place.place_id
+    }
     })
   }
 />

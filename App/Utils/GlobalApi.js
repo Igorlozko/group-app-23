@@ -12,7 +12,7 @@ const NewNearByPlace = (latitude, longitude) => {
   };
 
   return axios.get(BASE_URL, { params })
-    .then(response => {
+    .then(response => {  
       return response.data.results; // Accessing the 'results' array
     })
     .catch(error => {
